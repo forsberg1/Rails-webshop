@@ -1,5 +1,4 @@
 Blojkungen::Application.routes.draw do
-  match '/product/add_to_cart/:id', :controller => 'product', :action => 'add_to_cart'
   resources :home, :user, :product, :cart
   devise_for :users
 
@@ -8,11 +7,11 @@ Blojkungen::Application.routes.draw do
     get 'logout' => 'devise/sessions#destroy'
   end
 
-  match '/add', :to => 'product#add_to_cart'
+  #match '/add', :to => 'product#add_to_cart'
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  match  "cart/:action", :controller => 'cart', :action => "add"
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

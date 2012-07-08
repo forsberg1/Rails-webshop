@@ -1,0 +1,22 @@
+<h2>Kundkorg <%= @total %></h2>
+<% if @in_cart.empty? %>
+	<p>Din kundkorg är tom</p>
+	<% else %> 
+	<% @in_cart.each do |c| %>
+		<big><%= c.product.name %></big>
+		<p><%= c.product.description %></p>
+		<p><%= c.product.price %> kr</p>
+		<%= form_tag("/cart/add", :method => "post") do %>
+			<%= text_field_tag(:qty, c.amount) %>
+			<%= hidden_field_tag(:id, c.product.id) %>
+			<%= submit_tag("Uppdatera") %>
+		<% end %>
+		<p>Antal: <%= c.amount %></p>
+		<%= button_to "Ta bort", controller: 'cart', :action => "remove", :id => c.product.id %>
+		
+		<p>---------------------------</p>
+	<% end %>
+
+	<p>Antal Produkter: <%= total_products(@in_cart) %>
+	<P>Summa: <%= total_sum(@in_cart) %></p>
+<% end %>

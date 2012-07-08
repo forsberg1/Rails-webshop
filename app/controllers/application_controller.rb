@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
   private
   def initialize_cart
     if session[:cart_id]

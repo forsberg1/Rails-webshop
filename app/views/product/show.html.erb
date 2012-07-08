@@ -2,3 +2,4 @@
 <p><%= @product.sku %></p>
 <p><%= @product.price %> kr</p>
 <p><%= @product.weight %></p>
+<%= button_to "Köp denna produkt", controller: 'cart', :action => "add", :id => params[:id] %>
