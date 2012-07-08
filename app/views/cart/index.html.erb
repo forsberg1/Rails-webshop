@@ -12,7 +12,7 @@
 			<%= submit_tag("Uppdatera") %>
 		<% end %>
 		<p>Antal: <%= c.amount %></p>
-		<%= button_to "Ta bort", controller: 'cart', :action => "remove", :id => c.product.id %>
+		<%= button_to "Ta bort", controller: 'cart', :action => "remove", :id => c.id %>
 		
 		<p>---------------------------</p>
 	<% end %>

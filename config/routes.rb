@@ -12,6 +12,7 @@ Blojkungen::Application.routes.draw do
 
   # Sample of regular route:
   match  "cart/:action", :controller => 'cart', :action => "add"
+  #match  "cart/:action", :controller => 'cart', :action => "remove"
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

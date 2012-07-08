@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  private
-  def initialize_cart
+  before_filter :init_cart
+  def init_cart
     if session[:cart_id]
       @cart = Cart.find(session[:cart_id])
     else
