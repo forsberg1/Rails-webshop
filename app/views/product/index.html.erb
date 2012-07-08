@@ -1,0 +1,8 @@
+<h1>Sortiment</h1>
+<% @product.each do |p| %>
+  <p>Namn: <%= p.name %></p>
+  <p>Sku: <%= p.sku %></p>
+  <p>Beskrivning: <%= p.description %></p>
+  <p>Pris: <%= p.price %> kr</p>
+  <%= link_to "Visa produkt", product_path(p.id) %>
+<% end %>

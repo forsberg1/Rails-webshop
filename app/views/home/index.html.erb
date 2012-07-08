@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+	<p>Inloggad som: <%= current_user.email %></p>
+	<p><%= link_to "Logga ut", logout_path, :method => :delete %></p>
+<% else %>
+	<p><%= link_to "Logga in", user_session_path %></p>
+<% end %>

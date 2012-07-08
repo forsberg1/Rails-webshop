@@ -1,0 +1,45 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label "F_adress" %><br />
+  <%= f.text_field :f_adress %></div>
+
+  <div><%= f.label "f_Postnummer" %><br />
+  <%= f.text_field :f_postnumber %></div>
+
+  <div><%= f.label "f_Ort" %><br />
+  <%= f.text_field :f_county %></div>
+
+  <div><%= f.label "L_adress" %><br />
+  <%= f.text_field :l_adress %></div>
+
+  <div><%= f.label "L_postnummer" %><br />
+  <%= f.text_field :l_postnumber %></div>
+
+  <div><%= f.label "L_ort" %><br />
+  <%= f.text_field :l_county %></div>
+
+  <div><%= f.label "Namn" %><br />
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label "Efternamn" %><br />
+  <%= f.text_field :aftername %></div>
+
+  <div><%= f.label "Telefon" %><br />
+  <%= f.text_field :phone %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "links" %>
