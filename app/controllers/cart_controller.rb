@@ -2,6 +2,8 @@ class CartController < ApplicationController
    def index
       @in_cart = CartItem.find_all_by_cart_id(session[:cart_id], include: [:product])
    end
+   def checkout
+   end
    def add
     #@product = Product.find(params[:id])
     if request.post?

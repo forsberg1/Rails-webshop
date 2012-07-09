@@ -1,4 +1,5 @@
-class ProductController < ActionController::Base
+class ProductController < ApplicationController
+
   def index
     @product = Product.find(:all)
   end

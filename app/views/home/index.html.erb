@@ -1,8 +1,0 @@
-<%= "Surfid: " + session[:cart_id].to_s %>
-<p><%= link_to "Kundvag", cart_index_path %>
-<% if user_signed_in? %>
-	<p>Inloggad som: <%= current_user.email %></p>
-	<p><%= link_to "Logga ut", logout_path, :method => :delete %></p>
-<% else %>
-	<p><%= link_to "Logga in", user_session_path %></p>
-<% end %>

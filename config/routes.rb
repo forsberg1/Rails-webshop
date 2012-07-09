@@ -1,4 +1,5 @@
 Blojkungen::Application.routes.draw do
+  get 'cart/checkout' => 'cart#checkout'
   resources :home, :user, :product, :cart
   devise_for :users
 
@@ -6,6 +7,8 @@ Blojkungen::Application.routes.draw do
   devise_for :users do
     get 'logout' => 'devise/sessions#destroy'
   end
+
+
 
   #match '/add', :to => 'product#add_to_cart'
   # first created -> highest priority.

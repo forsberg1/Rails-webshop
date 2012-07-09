@@ -9,15 +9,15 @@
 </head>
 <body>
 	
-	<%= "Surfid: " + session[:cart_id].to_s %>
-	<p><%= link_to "Kundvag", cart_index_path %></p>
-	<p><%= link_to "Sortiment", product_index_path %></p>
 	<% if user_signed_in? %>
 		<p>Inloggad som: <%= current_user.email %></p>
-		<p><%= link_to "Logga ut", logout_path, :method => :delete %></p>
+		<p><%= link_to "Logga ut", logout_path %></p>
 	<% else %>
 		<p><%= link_to "Logga in", user_session_path %></p>
 	<% end %>
+	<p><%= link_to "Kundvag", cart_index_path %></p>
+	<p><%= link_to "Sortiment", product_index_path %></p>
+
 	<%= yield %>
 </body>
 </html>
