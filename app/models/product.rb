@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :cart_items
   has_many :carts, :through => :cart_items
+  belongs_to :categorie
   def add(product_id, shopper_id, qty)
     items = cart_items.find_all_by_cart_id(shopper_id)
     product = Product.find(product_id)

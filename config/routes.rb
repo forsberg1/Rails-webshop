@@ -1,6 +1,6 @@
 Blojkungen::Application.routes.draw do
   get 'cart/checkout' => 'cart#checkout'
-  resources :home, :user, :product, :cart
+  resources :home, :user, :product, :cart, :categorie
   devise_for :users
 
   # Add new logout path

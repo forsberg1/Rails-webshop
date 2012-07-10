@@ -3,6 +3,13 @@ class CartController < ApplicationController
       @in_cart = CartItem.find_all_by_cart_id(session[:cart_id], include: [:product])
    end
    def checkout
+    if user_signed_in?
+      #Magic here
+      @user_information = User.find(current_user.id)
+    else 
+      redirect_to :controller => "user"
+    end
+      
    end
    def add
     #@product = Product.find(params[:id])
