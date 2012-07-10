@@ -12,7 +12,7 @@ class Cart < ActiveRecord::Base
                              price:      product.price)
     else  
       c = CartItem.find(item.id)
-      c.amount = qty
+      c.amount = qty.to_i
       c.save
     end
   end

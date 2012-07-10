@@ -1,3 +1,4 @@
-<% @categorie.each do |categories| %>
-	<%= link_to categories.categorie_name, "" %>
+<b>Undermeny:</b>
+<% @categories.each do |categorie| %>
+	<%= link_to categorie.categorie_name, categorie_path(categorie) %>
 <% end %>

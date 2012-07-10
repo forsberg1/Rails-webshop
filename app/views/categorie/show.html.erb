@@ -1,0 +1,7 @@
+<% if @category.products.empty? %>
+	<p>Finns inga artiklar i denna kategorien.
+<% else %>
+	<% @category.products.each do |product| %>
+		<%= link_to product.name, product_path(product) %>	
+	<% end %>
+<% end %> 
