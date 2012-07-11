@@ -5,7 +5,8 @@ class CartController < ApplicationController
    def checkout
     if user_signed_in?
       #Magic here
-      @user_information = User.find(current_user.id)
+      @in_cart = CartItem.find_all_by_cart_id(session[:cart_id], include: [:product])
+      @user    = User.find(current_user.id)
     else 
       redirect_to :controller => "user"
     end

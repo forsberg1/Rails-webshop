@@ -2,4 +2,8 @@
 <p><%= @product.sku %></p>
 <p><%= @product.price %> kr</p>
 <p><%= @product.weight %></p>
-<%= button_to "Köp denna produkt", controller: 'cart', :action => "add", :id => params[:id] %>
+<%= form_tag("/cart/add", :method => "post") do %>
+			<%= text_field_tag(:qty, 1, style: "width: 20px;") %>
+			<%= hidden_field_tag(:id, @product.id) %>
+			<%= submit_tag("Köp") %>
+<% end %>

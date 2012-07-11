@@ -1,1 +1,11 @@
-<%= debug @user_information %>
+
+<%= form_for @user do |f| %>
+	<h2>Dina uppgifter</h2>
+	<%= f.label "Förnamn" %>:
+	<%= f.text_field :name %><br />
+	<%= f.label "Efternamn" %>:
+	<%= f.text_field :aftername %><br />
+	<%= f.label "Efternamn" %>:
+	<%= f.text_field :phone %>
+<% end %>
+<%= link_to "Bekräfta köp", "/cart/checkout" %>

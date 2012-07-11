@@ -7,7 +7,7 @@ class Cart < ActiveRecord::Base
 
     if item.nil?
       ci = cart_items.create(product_id: product_id,
-                             amount:     1,
+                             amount:     qty,
                              cart_id:    shopper_id,
                              price:      product.price)
     else  
