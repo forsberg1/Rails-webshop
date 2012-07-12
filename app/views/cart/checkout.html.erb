@@ -1,11 +1,29 @@
-
 <%= form_for @user do |f| %>
-	<h2>Dina uppgifter</h2>
+	<h1>Dina uppgifter</h1>
+	<h3>Personliga uppgifter</h3>
 	<%= f.label "Förnamn" %>:
 	<%= f.text_field :name %><br />
 	<%= f.label "Efternamn" %>:
 	<%= f.text_field :aftername %><br />
-	<%= f.label "Efternamn" %>:
+	<%= f.label "Telefon" %>:
 	<%= f.text_field :phone %>
+
+	<h3>Fakturaadress</h3>
+	<%= f.label "Adress" %>:
+	<%= f.text_field :f_adress %><br/>
+	<%= f.label "Postnummer" %>:
+	<%= f.text_field :f_postnumber %><br/>
+	<%= f.label "Ort" %>:
+	<%= f.text_field :f_county %><br/><br/>
+	<%= f.label "Använda faktura adress till leveransadress" %> 
+	<%= check_box_tag(:copy_adress) %>
+	<h3>Leveransuppgifter</h3>
+	<%= f.label "Adress" %>:
+	<%= f.text_field :l_adress %><br/>
+	<%= f.label "Postnummer" %>:
+	<%= f.text_field :l_postnumber %><br/>
+	<%= f.label "Ort" %>:
+	<%= f.text_field :l_county %><br/>
+	<%= f.submit %>
 <% end %>
 <%= link_to "Bekräfta köp", "/cart/checkout" %>
