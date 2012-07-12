@@ -3,21 +3,28 @@
 <head>
   <title>Blojkungen</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "grid" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
-	<% if user_signed_in? %>
-		<p>Inloggad som: <%= current_user.email %></p>
-		<p><%= link_to "Logga ut", logout_path %></p>
-	<% else %>
-		<p><%= link_to "Logga in", user_session_path %></p>
-	<% end %>
-	<p><%= link_to "Kundvag", cart_index_path %></p>
-	<p><%= link_to "Sortiment", categorie_index_path %></p>
+	<div id="wrapper" class="row">
+		<div class="column grid_12">
+			<ul id="main_navigation">
+				<% if user_signed_in? %>
+					<li>Inloggad som: <%= current_user.email %></li>
+					<li><%= link_to "Logga ut", logout_path %></li>
+				<% else %>
+					<li><%= link_to "Logga in", user_session_path %></li>
+				<% end %>
 
-	<%= yield %>
+				<li><%= link_to "Kundvag", cart_index_path %></li>
+				<li><%= link_to "Sortiment", categorie_index_path %></li>
+			<ul>
+		</div>
+		<div id="yield_content" class="column grid_12">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
